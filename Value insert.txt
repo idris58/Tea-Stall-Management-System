@@ -1,0 +1,34 @@
+insert into owner values(001,'Tasrif',01764592690);
+insert into owner values(002,'Yeasin',01864592690);
+insert into owner values(003,'Idris',01964592690);
+insert into owner values(004,'Yeamin',01664592690);
+insert into owner values(005,'Rakib',01364592690);
+select* from owner;
+
+insert into payment values(629,NULL,280,NULL,NULL,2,01864592690);
+insert into payment values(633,300,NULL,NULL,NULL,1,01764592690);
+insert into payment values(631,480,NULL,NULL,NULL,3,01964592690);
+insert into payment values(630,NULL,NULL,100,NULL,4,01664592690);
+insert into payment values(632,NULL,NULL,NULL,380,3,01964592690);
+select* from payment;
+
+insert into staff values(101,'Nahid',25,12000,NULL,2,01864592690);
+insert into staff values(105,'Siam',27,15000,102,1,01764592690);
+insert into staff values(103,'Shuvo',24,9000,104,3,01964592690);
+insert into staff values(104,'Tawhid',29,11000,101,4,01664592690);
+insert into staff values(102,'Mahin',23,12000,103,5,01364592690);
+select* from staff;
+
+insert into customer values(9776,'Yeasin','Cumilla',0176785690,101,629);
+insert into customer values(7674,'Newaz','Dhaka',0176685730,105,633);
+insert into customer values(9883,'Idris','Barisal',0137648689,103,631);
+insert into customer values(9094,'Yeamin','Cumilla',0180986854,104,630);
+insert into customer values(4578,'Rakib','Chittagong',01965592690,104,632);
+select* from customer;
+
+insert into item values(265,'Cold Coffee',200,9776);
+insert into item values(329,'Malay Cha',80,7674);
+insert into item values(465,'Hot Coffee',180,9883);
+insert into item values(962,'Kashmiri Cha',200,9094);
+insert into item values(562,'Masala Cha',80,7674);
+select* from item;

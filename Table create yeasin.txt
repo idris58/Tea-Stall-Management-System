@@ -1,0 +1,46 @@
+create table owner(o_id number(4),o_name varchar2(32),ophone_number number(11),primary key(o_id,ophone_number));
+create table customer(cus_id number(4),cus_name varchar2(32),address varchar2(56),cphone_number number(11),primary key(cus_id,cphone_number));
+create table staff(s_id number(4) constraint sid primary key,s_name varchar2(32),age number(3),salary float);
+create table payment(payment_id number(4) primary key,cash float,bkash float,nagad float,rocket float);
+create table item(item_id number(4) primary key,item_name varchar2(32),price float);
+Alter table owner add constraint f foreign key(o_id) references staff(s_id);
+
+insert into owner values(001,'Tasrif',01864592690);
+select* from owner;
+drop table owner;
+
+insert into customer values(9776,'Yeasin','Cumilla',0176785690);
+insert into customer values(7674,'Newaz','Dhaka',0176685730);
+insert into customer values(9883,'Idris','Barisal',0137648689);
+insert into customer values(9094,'Yeamin','Cumilla',0180986854);
+insert into customer values(2646,'Rakib','chittagong',0169879688);
+select* from customer;
+
+insert into staff values(101,'Nahid',25,12000);
+insert into staff values(105,'Siam',27,15000);
+insert into staff values(103,'Shuvo',24,9000);
+insert into staff values(104,'Tawhid',29,11000);
+insert into staff values(102,'Mahin',23,12000);
+select* from staff;
+
+
+insert into payment values(629,NULL,280,NULL,NULL);
+insert into payment values(633,300,NULL,NULL,NULL);
+insert into payment values(631,480,NULL,NULL,NULL);
+insert into payment values(630,NULL,NULL,100,NULL);
+insert into payment values(632,NULL,NULL,NULL,380);
+select* from payment;
+
+insert into item values(265,'Cold Coffee',200);
+insert into item values(329,'Malay Cha',80);
+insert into item values(465,'Hot Coffee',180);
+insert into item values(962,'Kashmiri Cha',200);
+insert into item values(562,'Masala Cha',80);
+select* from item;
+drop table item
+
+descrive item;
+descrive staff;
+descrive owner;
+descrive payment;
+drop table staff;

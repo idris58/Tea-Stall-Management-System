@@ -1,0 +1,65 @@
+create table owner(
+o_id number(4),
+o_name varchar2(32),
+ophone_number varchar(11),
+primary key(o_id,ophone_number)
+);
+
+create table payment(
+payment_id number(4) primary key,
+cash float,
+bkash float,
+nagad float,
+rocket float,
+o_id number(4),
+owner_number varchar(11),
+FOREIGN KEY (o_id,owner_number) REFERENCES owner(o_id,ophone_number)
+);
+
+create table staff(
+s_id number(4) primary key,
+s_name varchar2(32),
+age number(3),
+salary float,
+senior_staff number(4),
+o_id number(4),
+owner_number varchar(11),
+FOREIGN KEY (o_id,owner_number) REFERENCES owner(o_id,ophone_number)
+);
+
+create table customer(
+cus_id number(4) primary key,
+cus_name varchar2(32),
+address varchar2(56),
+cphone_number number(11),
+s_id number(4),
+payment_id number(4),
+FOREIGN KEY (s_id) REFERENCES staff(s_id),
+FOREIGN KEY (payment_id) REFERENCES payment(payment_id )
+);
+
+create table item(
+item_id number(4) primary key,
+item_name varchar2(32),
+price float,
+cus_id number(4),
+FOREIGN KEY (cus_id) REFERENCES customer(cus_id)
+);
+
+desc owner
+desc payment
+desc staff
+desc customer
+desc item
+
+select * from owner;
+select * from staff;
+select * from customer;
+select * from payment;
+select * from item;
+
+drop table item
+drop table customer
+drop table staff
+drop table payment
+drop table owner

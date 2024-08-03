@@ -1,0 +1,12 @@
+1. Create a view called CUS_VU based on the Customer ID, Customer name, and Payment ID from the Customer table. Change the heading for the Customer name to CUSTOMER.
+
+CREATE VIEW CUS_VU
+AS select cus_id,cus_name CUSTOMER,payment_id
+from customer;
+
+2. Create a view called staff_vu based on the Owner ID, Minimum Salary, Maximum Salary and Avarage Salary from the Customer table.
+
+CREATE VIEW staff_vu
+AS select o.o_id, MIN(s.salary), MAX(s.salary),AVG(s.salary)
+from staff s, owner o
+where s.o_id= o.o_id;

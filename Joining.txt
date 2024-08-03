@@ -1,0 +1,39 @@
+Equajoin
+1.	Display name & Address of all the Customer who is  served by Tawhid.
+
+select cus_name,address
+from customer c,staff s
+where c.s_id=s.s_id and s.s_name='Tawhid';
+
+2.	Display Name, ID & Age of all Staff who is work under Idris.
+select s_id,s_name,age
+from staff e,owner d
+where e.o_id=d.o_id and d.o_name ='Idris';
+
+Outer join
+1.	Display all the Owner information for all the existing Staff and if a Owner has no employees display it 
+	as “No Staff”.
+
+select d.*,nvl(to_char(e.s_id),'NO Staff')
+from staff e,owner d
+where e.o_id(+)=d.o_id;
+
+2.	Get all the matching & non-matching records from Owner & Staff tables.
+
+select *
+from owner o,staff s
+where s.o_id(+)=o.o_id  
+
+Non Equijoin
+1.	Display Name and Salary of all Staff who get salary more than Kashmiri Cha.
+select s.s_name,s.salary
+from staff s,item i
+where s.salary>i.price and item_name='Kashmiri Cha';
+
+Self Join
+
+1. Display all staff name concatenate with his junior staff.(Example: Staff x Junior than Staff y).
+
+SELECT j.s_name||' Junior than '||s.s_name
+FROM 	staff s, staff j
+WHERE 	s.s_id= j.senior_staff;

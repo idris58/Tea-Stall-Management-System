@@ -1,0 +1,19 @@
+1.Display all the staff who are earning more than Tawhid.
+select*
+from staff
+where salary>(select salary from staff where s_name='Tawhid');
+
+2.Display all the customer who are located at Dhaka.
+select*
+from customer
+where address=(select address from customer where address='Dhaka');
+
+3.Display all the item information which price is less than Hot coffee.
+select*
+from item
+where price<(select price from item where item_name='Hot Coffee');
+
+4Display the first maximum salary from Staff Table.
+SELECT*
+FROM staff
+WHERE salary=(SELECT MAX(salary) FROM staff);
